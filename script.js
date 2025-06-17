@@ -1,19 +1,27 @@
 const canvas = document.getElementById('canvas');
+
+const foodX = Math.floor(Math.random()*(580-0+1)+0)
+const foodY = Math.floor(Math.random()*(580-0+1)+0)
+// console.log('foodX : ', foodX)
+// console.log('foodY : ', foodY)
+
 const ctx = canvas.getContext('2d');
+
 // body
 ctx.beginPath();
 
 ctx.fillStyle = 'black';
 ctx.fillRect(0, 0, 600, 600);
 
+ctx.fillStyle = 'red';
+ctx.fillRect(foodX,foodY,10,10);
+
 //snec
 ctx.beginPath();
-
 
 // Movement -> distance -> blocks covered
 let x = 10;
 let y = 0;
-
 
 /**
  * Direction controls for the snec
@@ -52,7 +60,6 @@ const handleKeyPress = (event) => {
     ctx.fillStyle = 'white';
     ctx.fillRect(0, 0, 10, 10);
   }
-
 }
 
 const erase = () => {
@@ -85,13 +92,9 @@ setInterval(() => {
   render();
 }, 200); // speed of the snec
 
-ctx.endPath(); // snec 
+// ctx.endPath(); // snec 
 
-
-
-ctx.endPath(); // body
-
-
+// ctx.endPath(); // body
 
 
 // #̶#̶T̶O̶D̶O̶ :̶ M̶a̶k̶e̶ t̶h̶e̶ d̶o̶t̶ g̶o̶ f̶a̶s̶t̶e̶r̶ -̶ s̶e̶t̶ s̶p̶e̶e̶d̶----------
