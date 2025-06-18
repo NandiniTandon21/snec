@@ -1,7 +1,8 @@
 const canvas = document.getElementById('canvas');
 
-const foodX = Math.floor(Math.random()*(580-0+1)+0)
-const foodY = Math.floor(Math.random()*(580-0+1)+0)
+const foodX = Math.floor(Math.random() * (580 - 0 + 1) + 0)
+const foodY = Math.floor(Math.random() * (580 - 0 + 1) + 0)
+
 // console.log('foodX : ', foodX)
 // console.log('foodY : ', foodY)
 
@@ -14,7 +15,7 @@ ctx.fillStyle = 'black';
 ctx.fillRect(0, 0, 600, 600);
 
 ctx.fillStyle = 'red';
-ctx.fillRect(foodX,foodY,10,10);
+ctx.fillRect(foodX, foodY, 10, 10);
 
 //snec
 ctx.beginPath();
@@ -22,6 +23,10 @@ ctx.beginPath();
 // Movement -> distance -> blocks covered
 let x = 10;
 let y = 0;
+
+if (x == foodX && y == foodY) {
+  console.log('food eaten');
+}
 
 /**
  * Direction controls for the snec
@@ -97,8 +102,10 @@ setInterval(() => {
 // ctx.endPath(); // body
 
 
+
 // #̶#̶T̶O̶D̶O̶ :̶ M̶a̶k̶e̶ t̶h̶e̶ d̶o̶t̶ g̶o̶ f̶a̶s̶t̶e̶r̶ -̶ s̶e̶t̶ s̶p̶e̶e̶d̶----------
 // #̶#̶T̶O̶D̶O̶ :̶ C̶h̶a̶n̶g̶e̶ d̶i̶r̶e̶c̶t̶i̶o̶n̶ o̶f̶ t̶h̶e̶ d̶o̶t̶ -̶ s̶e̶t̶ d̶i̶r̶e̶c̶t̶i̶o̶n̶ -̶ k̶e̶y̶ p̶r̶e̶s̶s̶e̶s̶
+// ##TODO : spawn food at random locations
 
 // ##TODO : Make the dot change size on eating food - increase length
 // ##TODO : Keep the dot going full circle when it completes one run across the canvas
